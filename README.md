@@ -46,16 +46,4 @@ and a brain connectivity network analysis.
   - `plot.py` contains the functions to load test results and draw plots.
 - `data/`: This folder where the output results and the dataset should be put.
   - 'data_process.R' is used for preprocessing the HCP dataset. 
-## Citation
 
-Please cite our paper
-["Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning"](https://arxiv.org/pdf/2106.01474.pdf) 
-
-``` 
-@article{shi2021testing,
-  title={Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning},
-  author={Shi, Chengchun and Zhou, Yunzhe and Li, Lexin},
-  journal={arXiv preprint arXiv:2106.01474},
-  year={2021}
-}
-``` 
