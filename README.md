@@ -40,23 +40,19 @@ and a brain connectivity network analysis.
 - `src/`: This folder contains all python codes used in numerical experiments and real data analysis.
   - 'inference.py' is used for data generating and supervised and generative adversarial learning.
   - `infer_utils.py` contains the utility functions to implement hypothesis testing.
-  - `main.py` is an entrance to be used in command line. We can type `python main.py` to reproduce all the results of this paper.
+  - `main.py` is an entrance to be used in command line. We can type `python main.py` to reproduce results of DRT and Sugar.
   - `main_lrt.R` is to implement the methods in ["Likelihood ratio tests for a large directed acyclic graph"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7508303/)
   - `nonlinear_learning.py` is used for structural learning of the graphs. (Refers to https://github.com/xunzheng/notears)
   - `plot.py` contains the functions to load test results and draw plots.
 - `data/`: This folder where the output results and the dataset should be put.
   - 'data_process.R' is used for preprocessing the HCP dataset. 
 
-## Citation
+## Workflow
 
-Please cite our paper
-["Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning"](https://arxiv.org/pdf/2106.01474.pdf) 
+Run the following files in order to reproduce the results of this paper:
+- data_process.R
+- main.py
+- main_lrt.R
+- plot.py
+``` 
 
-``` 
-@article{shi2021testing,
-  title={Testing Directed Acyclic Graph via Structural, Supervised and Generative Adversarial Learning},
-  author={Shi, Chengchun and Zhou, Yunzhe and Li, Lexin},
-  journal={arXiv preprint arXiv:2106.01474},
-  year={2021}
-}
-``` 
