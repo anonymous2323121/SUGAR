@@ -50,9 +50,9 @@ and a brain connectivity network analysis.
 ## Workflow
 
 Follow the steps below in order to reproduce the results of this paper:
-- Rscript data_process.R
-- Convert the format of generated files "HCP_low.csv" and "HCP_high.csv" into "HCP_low.npy" and "HCP_high.npy" by using python.
-- python main.py
-- Rscript main_lrt.R
-- python plot.py
+- `Rscript data_process.R`
+- Convert the format of generated files `HCP_low.csv` and `HCP_high.csv` into `HCP_low.npy` and `HCP_high.npy` by using python.
+- `python main.py`
+- `Rscript main_lrt.R`
+- `python plot.py`
 
