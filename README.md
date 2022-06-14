@@ -54,5 +54,4 @@ Run the following files in order to reproduce the results of this paper:
 - main.py
 - main_lrt.R
 - plot.py
-``` 
 
