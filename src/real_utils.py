@@ -1,8 +1,12 @@
 from inference import *
 from nonlinear_learning import *
 import networkx as nx
+import numpy as np
+import copy
+from random import randint
 
 def calculate_interaction_graph_real(xs,max_iter,d,lambda0,w_threshold):
+    torch.manual_seed(0)
     judge1=0
     judge2=0
     N=int(xs.shape[0]/316)
@@ -93,3 +97,89 @@ def run_real(data_type):
             np.save("../data/HCP_low_pvalue.npy",result_all)
         elif data_type == "high":
             np.save("../data/HCP_high_pvalue.npy",result_all)
+            
+def print_real(data_type):
+    if data_type == "low":
+        result_all = np.load("../data/HCP_low_pvalue.npy",allow_pickle=True)
+    elif data_type == "high":
+        result_all = np.load("../data/HCP_high_pvalue.npy",allow_pickle=True)
+        
+    pvalue_ls=[]
+    for m in range(len(result_all)):
+        for k in range(len(result_all[m])):
+            pvalue_ls.append(result_all[m][k][0])
+
+    order=np.argsort(pvalue_ls)
+
+    pvalue_order=[]
+    for m in range(len(pvalue_ls)):
+        pvalue_order.append(pvalue_ls[order[m]])
+
+    M=len(pvalue_order)
+
+    R=0
+    for m in range(M):
+        R=R+1/(1+m)
+
+    q=0.05
+    for m in range(M):
+        k=M-m-1
+        if pvalue_order[k]<= k*q/(M*R):
+            M0=k
+            break
+
+    W=np.zeros([127,127])
+    count=0
+    for m in range(len(result_all)):
+        for k in range(len(result_all[m])):
+            if pvalue_ls[count]<=pvalue_order[M0]:
+                W[m,k]=1
+            count=count+1
+            
+    d=W.shape[0]
+    G=nx.DiGraph()
+    G.add_nodes_from(range(d))
+    for m in range(d):
+        for n in range(d):
+            if W[m,n]!=0:
+                G.add_edge(n,m)
+    module_name=np.load("../data/module_name.npy",allow_pickle=True)
+    color_map = []
+    node1=[]
+    node2=[]
+    node3=[]
+    node4=[]
+    for node in G:
+        if module_name[node]=="Auditory":
+            color_map.append('blue') 
+            node1.append(node)
+        if module_name[node]=="Default mode":
+            color_map.append('red')    
+            node2.append(node)
+        if module_name[node]=="Visual":
+            color_map.append('green')   
+            node3.append(node)
+        if module_name[node]=="Fronto-parietal Task Control":
+            color_map.append('yellow')  
+            node4.append(node)
+    relationship=np.zeros([4,4])
+    
+    def return_position(m):
+        if m in node1:
+            value=0
+        elif m in node2:
+            value=1
+        elif m in node3:
+            value=2
+        elif m in node4:
+            value=3
+        return int(value)
+    for i in range(127):
+        for j in range(127):
+            if W[i,j]!=0:
+                relationship[return_position(i),return_position(j)]=relationship[return_position(i),return_position(j)]+1
+                
+    show=relationship+relationship.T
+    for m in range(4):
+        show[m,m]=show[m,m]/2
+    print(show)
