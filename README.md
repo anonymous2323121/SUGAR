@@ -30,6 +30,7 @@ and a brain connectivity network analysis.
     + scipy 1.5.4
     + torch 1.0.0
     + tensorflow 2.1.3
+    + tensorflow-probability 0.8.0
     + sklearn 0.23.2
 
 + R 3.6.3
