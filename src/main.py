@@ -99,5 +99,8 @@ def main():
     run_real("low")
     run_real("high")
     
+    print_real("low")
+    print_real("high")
+    
 if __name__ == '__main__':
     main()
