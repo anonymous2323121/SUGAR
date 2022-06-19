@@ -46,11 +46,13 @@ and a brain connectivity network analysis.
   - `nonlinear_learning.py` is used for structural learning of the graphs. (Refers to https://github.com/xunzheng/notears)
   - `plot.py` contains the functions to load test results and draw plots.
 - `data/`: This folder where the output results and the dataset should be put.
-  - 'data_process.R' is used for preprocessing the HCP dataset. 
+  - 'module_name.csv' records the information of the electrode names. 
 
 ## Workflow
 
 Follow the steps below in order to reproduce the results of this paper:
+-  Put the real dataset "HCP_low.npy" and "HCP_high.npy" into the "data" folder. (Email the authors to
+request the data access.) 
 - `python main.py`
 - `Rscript main_lrt.R`
 - `python plot.py`
