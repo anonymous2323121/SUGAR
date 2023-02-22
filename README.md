@@ -79,9 +79,8 @@ For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla 
 
 
 ## References
-[1] Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E., Yacoub, E., Ugurbil, K., Con-
-sortium, W.-M. H., et al. (2013). The wu-minn human connectome project: an overview.
-Neuroimage, 80:62–79.
+[1] Barch, D. M., Burgess, G. C., et al. (2013). Function in the human connectome: Task-fmri and
+individual differences in behavior. NeuroImage, 80:169 – 189. Mapping the Connectome.
 
 [2] Glasser, M. F., Sotiropoulos, S. N., et al. (2013). The minimal preprocessing pipelines for the
 human connectome project. Neuroimage, 80:105–124.
@@ -94,5 +93,8 @@ K. E., Toro, R., Laird, A., and Beckmann, C. F. (2009). Correspondence of the br
 functional architecture during activation and rest. Proceedings of the National Academy of
 Sciences of the United States of America, 106:13040–5.
 
-[5] Barch, D. M., Burgess, G. C., et al. (2013). Function in the human connectome: Task-fmri and
-individual differences in behavior. NeuroImage, 80:169 – 189. Mapping the Connectome.
+[5] Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E., Yacoub, E., Ugurbil, K., Con-
+sortium, W.-M. H., et al. (2013). The wu-minn human connectome project: an overview.
+Neuroimage, 80:62–79.
+
+
