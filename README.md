@@ -53,7 +53,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
     -  Run `main_lrt.R` to implement LRT for the simulations.
     -  Run `plot.py` to reproduce the figures of sensivity analysis in seciton 5 of the paper.
 
-- We also provide a toy example in `scr/example.ipynb` which is feasible to run on a local computer and reproduce the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to produce less accurate but faster results.
+- We also provide a toy example in `scr/example.ipynb` which is feasible to run on a local computer and reproduce the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to speed it up.
 
 - Follow the steps below in order to reproduce the real data analysis of this paper:
     -  Put the HCP data into the "data" folder. This data can be requested at https://www.humanconnectome.org/study/hcp-young-adult after signing the data user agreement.
