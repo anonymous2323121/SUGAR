@@ -60,3 +60,13 @@ In this article, we propose a new hypothesis testing method for directed acyclic
     -  Navigate to the `data` folder and run `data_process.R` to preprocess the dataset.
     -  Navigate to the `src` folder and run `main_real.py` to implement the DAG testing for HCP data.
 
+## Data Description
+
+The dataset we analyze is part of the Human Connectome Project (HCP, Van Essen et al., 2013), whose overarching objective is to understand brain connectivity patterns of healthy adults. We study the fMRI scans of a group of individuals who undertook a story-math task. The task consisted of blocks of auditory stories and addition-subtraction calculations, and required the participant to answer a series of questions. An accuracy score was given at the end. We analyze two subsets of individuals with matching age and sex. One set consists of N = 28 individuals who scored below 65 out of 100, and the other set consists of N = 28 individuals who achieved the perfect score of 100. All fMRI scans have been preprocessed following the
+pipeline of Glasser et al. (2013) that summarized each fMRI scan as a matrix of time series. Each row is a time series with length T = 316, and there are 264 rows corresponding to 264 brain regions (Power et al., 2011). Those brain regions are further grouped into 14 functional
+modules (Smith et al., 2009). Each module possesses a relatively autonomous functionality,
+and complex tasks are believed to perform through coordinated collaborations among the mod-
+ules. In our analysis, we concentrate on d = 127 brain regions from four functional modules:
+auditory, visual, frontoparietal task control, and default mode, which are generally believed to
+be involved in language processing and problem solving domains (Barch et al., 2013).
+
