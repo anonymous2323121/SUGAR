@@ -5,16 +5,7 @@ This repository contains the implementation for the paper "Testing Directed Acyc
 
 ## Summary of the paper
 
-In this article, we propose a new hypothesis testing method for directed acyclic graph
-(DAG). While there is a rich class of DAG estimation methods, there is a relative paucity
-of DAG inference solutions. Moreover, the existing methods often impose some specific
-model structures such as linear models or additive models, and assume independent data
-observations. Our proposed test instead allows the associations among the random vari-
-ables to be nonlinear and the data to be time-dependent. We build the test based on some
-highly flexible neural networks learners. We establish the asymptotic guarantees of the
-test, while allowing either the number of subjects or the number of time points for each
-subject to diverge to infinity. We demonstrate the efficacy of the test through simulations
-and a brain connectivity network analysis.
+In this article, we propose a new hypothesis testing method for directed acyclic graph (DAG). While there is a rich class of DAG estimation methods, there is a relative paucity of DAG inference solutions. Moreover, the existing methods often impose some specific model structures such as linear models or additive models, and assume independent data observations. Our proposed test instead allows the associations among the random variables to be nonlinear and the data to be time-dependent. We build the test based on some highly flexible neural networks learners. We establish the asymptotic guarantees of the test, while allowing either the number of subjects or the number of time points for each subject to diverge to infinity. We demonstrate the efficacy of the test through simulations and a brain connectivity network analysis.   
 
 
 **Figures**:  
