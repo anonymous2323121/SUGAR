@@ -10,6 +10,7 @@ def set_random_seed(seed):
 
 
 def is_dag(W):
+    # judge whether it is a DAG
     G = ig.Graph.Weighted_Adjacency(W.tolist())
     return G.is_dag()
 

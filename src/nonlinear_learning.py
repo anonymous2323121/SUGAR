@@ -12,6 +12,14 @@ import utils as ut
 torch.set_default_dtype(torch.double)
 np.set_printoptions(precision=3)
 
+
+# =================================================================================================================
+# This contains the helper functions for the implementation of the structure learning of DAG.
+# The credits of the codes should be given to: https://github.com/xunzheng/notears
+# =================================================================================================================
+
+
+
 class LocallyConnected(nn.Module):
     """Local linear layer, i.e. Conv1dLocal() with filter size 1.
 
@@ -32,10 +40,24 @@ class LocallyConnected(nn.Module):
 
     def __init__(self, num_linear, input_features, output_features, bias=True):
         super(LocallyConnected, self).__init__()
+        """
+        This initialize the class.
+
+        Input
+        ----------
+        num_linear: num of local linear layers
+        input_features: the input features into the model
+        output_features: the output features from the model
+
+        Output
+        ----------
+        None
+        """
         self.num_linear = num_linear
         self.input_features = input_features
         self.output_features = output_features
-
+        
+        # initialize the weights and bias of the neural network
         self.weight = nn.Parameter(torch.Tensor(num_linear,
                                                 input_features,
                                                 output_features).to(device))
@@ -169,6 +191,9 @@ class LBFGSBScipy(torch.optim.Optimizer):
 
         
 class NotearsMLP(nn.Module):
+    """
+    This class is to define the module of the Notears MLP method for DAG structual learning
+    """
     def __init__(self, dims, bias=True):
         super(NotearsMLP, self).__init__()
         assert len(dims) >= 2
@@ -248,13 +273,28 @@ class NotearsMLP(nn.Module):
     
     
 def squared_loss(output, target):
+    # calculate the squared loss
     n = target.shape[0]
     loss = 0.5 / n * torch.sum((output - target) ** 2)
     return loss
 
 
 def dual_ascent_step(model, X, lambda1, lambda2, rho, alpha, h, rho_max):
-    """Perform one step of dual ascent in augmented Lagrangian."""
+    """
+    This function Perform one step of dual ascent in augmented Lagrangian..
+    
+    Input
+    ----------
+    model: the neural network model
+    X: input sample matrix
+    lambda1, lambda2: hyperparameters for regulizations
+    rho, alpha, h: convergence variables for optimization
+    rho_max: upper bound to avoid numerical issues
+    
+    Output
+    ----------
+    rho, alpha, h_new: return the convergence variables for optimization to get the information of stopping
+    """
     h_new = None
     optimizer = LBFGSBScipy(model.parameters())
     X_torch = torch.from_numpy(X).to(device)
@@ -289,13 +329,33 @@ def notears_nonlinear(model: nn.Module,
                       h_tol: float = 1e-8,
                       rho_max: float = 1e+16,
                       w_threshold: float = 0.3):
+    """
+    This function implements the Notears MLP method for DAG structual learning.
+    
+    Input
+    ----------
+    X: input sample matrix
+    lambda1, lambda2: hyperparameters for regulizations
+    max_iter: maximum number of iterations
+    h_tol: threshold value of convergence
+    rho_max: upper bound to avoid numerical issues
+    w_threshold: graph weights cutoff
+    
+    Output
+    ----------
+    W_est: the estimated DAG graph
+    """
+    
+    # specify the convergence variables
     rho, alpha, h = 1.0, 0.0, np.inf
     for _ in range(max_iter):
         print(_)
+        # update the model in each iteration
         rho, alpha, h = dual_ascent_step(model, X, lambda1, lambda2,
                                          rho, alpha, h, rho_max)
         if h <= h_tol or rho >= rho_max:
             break
+    # convert the result to graph edge weights
     W_est = model.fc1_to_adj()
     W_est[np.abs(W_est) < w_threshold] = 0
     return W_est
