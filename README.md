@@ -23,6 +23,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
     + tensorflow 2.1.3
     + tensorflow-probability 0.8.0
     + sklearn 0.23.2
+    + igraph 0.10.0
 
 + R 3.6.3
     + clrdag (https://github.com/chunlinli/clrdag)
