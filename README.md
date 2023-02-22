@@ -74,4 +74,4 @@ The HCP fMRI data is a publicly available dataset. It can be requested at https:
 
 
 ## Computational Time
-For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. we implemented the rest of testing on N1 standard CPU, and it took about 2 minutes for one data replication. For the real data analysis, it takes around 30 hours for each dataset since we are implementing tesing for every edge of a large-scale network.
+For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. we implemented the rest of testing on N1 standard CPU, and it took about 2 minutes for one data replication. For the real data analysis, it takes around 30 hours for each dataset since we are implementing tesing for every edge of a large-scale network ($127 \times 127$).
