@@ -48,7 +48,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
 ## Workflow
 
 - Follow the steps below in order to reproduce the simulations of this paper:
-    -  Navigate to the `src` folder
+    -  Navigate to the `src` folder.
     -  Run `main.py` to implement SUGAR and DRT for the simulations.
     -  Run `main_lrt.R` to implement LRT for the simulations.
     -  Run `plot.py` to reproduce the figures of sensivity analysis in seciton 5 of the paper.
