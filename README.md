@@ -56,7 +56,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
 - We also provide a toy example in `scr/example.ipynb` which is feasible to run on a local computer and reproduces the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to speed it up.
 
 - Follow the steps below in order to reproduce the real data analysis of this paper:
-    -  Put the HCP data into the "data" folder. This data can be requested at https://www.humanconnectome.org/study/hcp-young-adult after signing the data user agreement.
+    -  Put the HCP data into the "data" folder. This dataset can be requested at https://www.humanconnectome.org/study/hcp-young-adult after signing the data user agreement.
     -  Navigate to the `data` folder and run `data_process.R` to preprocess the dataset.
     -  Navigate to the `src` folder and run `main_real.py` to implement the DAG testing for HCP data.
 
@@ -69,4 +69,6 @@ and complex tasks are believed to perform through coordinated collaborations amo
 ules. In our analysis, we concentrate on d = 127 brain regions from four functional modules:
 auditory, visual, frontoparietal task control, and default mode, which are generally believed to
 be involved in language processing and problem solving domains (Barch et al., 2013).
+
+The HCP fMRI data is a publicly available dataset. It can be requested at https://www.humanconnectome.org/study/hcp-young-adult after signing the data user agreement.
 
