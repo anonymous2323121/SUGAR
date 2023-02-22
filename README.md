@@ -70,11 +70,11 @@ ules. In our analysis, we concentrate on d = 127 brain regions from four functio
 auditory, visual, frontoparietal task control, and default mode, which are generally believed to
 be involved in language processing and problem solving domains (Barch et al., 2013).
 
-The HCP fMRI data is a publicly available dataset. It can be requested at https://www.humanconnectome.org/study/hcp-young-adult and you are required to sign the data user agreement in it.
+The HCP fMRI data is publicly available and can be requested at \url{https://www.humanconnectome.org/study/hcp-young-adult}. To access the dataset, you are required to sign the data user agreement.
 
 
 ## Computational Time
-For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. we implemented the rest of testing on N1 standard CPU, and it took about 2 minutes for one data replication. For the real data analysis, it takes around 30 hours for each dataset since we are implementing tesing for every edge of a large-scale network ($127 \times 127$).
+For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. We implemented the rest of testing on N1 standard CPU, and it took about 2 minutes for one data replication. For real data analysis, each dataset required approximately 30 hours due to the testing of every edge in the large-scale network ($127 \times 127$).
 
 
 ## References
