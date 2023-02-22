@@ -39,6 +39,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
   - `real_utils.py` contains the major functions to implement DAG structure learning and p value calculation for the real data analysis.
   - `sim_gen.py` contains the utils functions to generate data for simulations and is sourced to implement the LRT.
   - `plot.py` contains the functions to load test results and draw plots for the simulations.
+  - `synthetic.py` contains the helper functions to generate the graph matrix for simulations.
   - `utils_tools.py` provides the helper function for the GAN with Sinkhorn divergence.
   - `utils.py` provides the other utility functions.
 - `data/`: This folder where the output results and the dataset should be put.
