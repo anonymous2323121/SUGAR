@@ -75,3 +75,23 @@ The HCP fMRI data is a publicly available dataset. It can be requested at https:
 
 ## Computational Time
 For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. we implemented the rest of testing on N1 standard CPU, and it took about 2 minutes for one data replication. For the real data analysis, it takes around 30 hours for each dataset since we are implementing tesing for every edge of a large-scale network ($127 \times 127$).
+
+
+## References
+[1] Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E., Yacoub, E., Ugurbil, K., Con-
+sortium, W.-M. H., et al. (2013). The wu-minn human connectome project: an overview.
+Neuroimage, 80:62–79.
+
+[2] Glasser, M. F., Sotiropoulos, S. N., et al. (2013). The minimal preprocessing pipelines for the
+human connectome project. Neuroimage, 80:105–124.
+
+[3] Power, J. D., Cohen, A. L., et al. (2011). Functional network organization of the human brain.
+Neuron, 72(4):665–678.
+
+[4] Smith, S. D., Fox, P. T., Miller, K., Glahn, D., Fox, P., Mackay, C. E., Filippini, N., Watkins,
+K. E., Toro, R., Laird, A., and Beckmann, C. F. (2009). Correspondence of the brain;
+functional architecture during activation and rest. Proceedings of the National Academy of
+Sciences of the United States of America, 106:13040–5.
+
+[5] Barch, D. M., Burgess, G. C., et al. (2013). Function in the human connectome: Task-fmri and
+individual differences in behavior. NeuroImage, 80:169 – 189. Mapping the Connectome.
