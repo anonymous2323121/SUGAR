@@ -52,7 +52,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
     -  Navigate to the `src` folder.
     -  Run `main.py` to implement SUGAR and DRT for the simulations.
     -  Run `main_lrt.R` to implement LRT for the simulations.
-    -  Run \textsf{plot.py} to reproduce the figures of the sensitivity analysis.
+    -  Run `plot.py` to reproduce the figures of the sensitivity analysis.
 
 - We also provide a toy example in `scr/example.ipynb` which is feasible to run on a local computer and reproduces the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to speed it up.
 
