@@ -34,9 +34,9 @@ In this article, we propose a new hypothesis testing method for directed acyclic
   - `main_real.py` is the main function to implements the real data analysis in section 6 of the paper.
   - `main_lrt.R` is to implement the methods in ["Likelihood ratio tests for a large directed acyclic graph"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7508303/)
   - `nonlinear_learning.py` is used for structural learning of the graphs. (Refers to https://github.com/xunzheng/notears)
-  - `inference.py` contains the major functions to implement DAG structure learning and p value calculation.
+  - `inference.py` contains the major functions to implement DAG structure learning and p value calculation for simulations.
   - `infer_utils.py` contains the helper functions for p value calculation in simulations.
-  - `real_utils.py` contains the helper functions to implement DAG structure learning and p value calculation for the real data analysis.
+  - `real_infer.py` contains the mahor functions to implement DAG structure learning and p value calculation for the real data analysis.
   - `sim_gen.py` contains the utils functions to generate data for simulations and is sourced to implement the LRT.
   - `plot.py` contains the functions to load test results and draw plots for the simulations.
   - `synthetic.py` contains the helper functions to generate the graph matrix for simulations.
