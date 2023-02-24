@@ -36,7 +36,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
   - `nonlinear_learning.py` is used for structural learning of the graphs. (Refers to https://github.com/xunzheng/notears)
   - `inference.py` contains the major functions to implement DAG structure learning and p value calculation for simulations.
   - `infer_utils.py` contains the helper functions for p value calculation in simulations.
-  - `real_infer.py` contains the mahor functions to implement DAG structure learning and p value calculation for the real data analysis.
+  - `real_infer.py` contains the major functions to implement DAG structure learning and p value calculation for the real data analysis.
   - `sim_gen.py` contains the utils functions to generate data for simulations and is sourced to implement the LRT.
   - `plot.py` contains the functions to load test results and draw plots for the simulations.
   - `synthetic.py` contains the helper functions to generate the graph matrix for simulations.
@@ -52,7 +52,7 @@ In this article, we propose a new hypothesis testing method for directed acyclic
     -  Navigate to the `src` folder.
     -  Run `main.py` to implement SUGAR and DRT for the simulations.
     -  Run `main_lrt.R` to implement LRT for the simulations.
-    -  Run `plot.py` to reproduce the figures of sensivity analysis in seciton 5 of the paper.
+    -  Run \textsf{plot.py} to reproduce the figures of the sensitivity analysis.
 
 - We also provide a toy example in `scr/example.ipynb` which is feasible to run on a local computer and reproduces the case of $\delta=0.5$ in Figure 2 of the main paper. It is tested to take around 12 hours to run on a standard single CPU machine. If you are out of patience, you can also reduce the number of repetitions in the simulations to speed it up.
 
@@ -75,7 +75,7 @@ The HCP fMRI data is publicly available and can be requested at https://www.huma
 
 
 ## Computational Time
-For the simulation part, we implemented the DAG estimation step on NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. We implemented the rest of testing on N1 standard CPU, and it took about 2 minutes for one data replication. For real data analysis, each dataset required approximately 30 hours due to the testing of every edge in the large-scale network ($127 \times 127$).
+For the simulations, we implemented the DAG estimation step on the NVIDIA Tesla T4 GPU, and it took about 5 to 20 minutes when $d$ ranges from 50 to 150 for one data replication. We implemented the rest of the testing procedure on the N1 standard CPU, and it took about 2 minutes for one data replication. For the real data application, it took about 30 hours to test every edge in this large $127 \times 127$ network.  
 
 
 ## References
