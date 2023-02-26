@@ -71,7 +71,7 @@ ules. In our analysis, we concentrate on d = 127 brain regions from four functio
 auditory, visual, frontoparietal task control, and default mode, which are generally believed to
 be involved in language processing and problem solving domains (Barch et al., 2013).
 
-The HCP fMRI data is publicly available and can be requested at https://www.humanconnectome.org/study/hcp-young-adult. To access the dataset, you are required to sign the data user agreement.
+The HCP fMRI data is publicly available at https://www.humanconnectome.org/study/hcp-young-adult. To access the dataset, you are required to sign the data user agreement.
 
 
 ## Computational Time
